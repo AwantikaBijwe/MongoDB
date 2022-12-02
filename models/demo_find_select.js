@@ -6,7 +6,7 @@ MongoClient.connect(url, function(err, db) {
   var dbo = db.db("mydb");
   dbo.collection("customers").find({}).toArray(function(err, result) {
     if (err) throw err;
-    console.log(result);
+    console.log(result[2].address,result[2].name);
     db.close();
   });
 });
